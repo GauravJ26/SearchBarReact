@@ -10,7 +10,10 @@ function App() {
 
 useEffect(() => {
   const fetchUsers = async () =>{
-  const res = await axios.get(`http://localhost:5001?q=${query}`)
+  // const res = await axios.get(`http://localhost:5001?q=${query}`)
+
+const res = await axios.get(`https://reqres.in/api/users?q=${query}`)
+    // https://reqres.in/api/users
   setData(res.data);
   };
 if (query.length === 0 || query.length > 2) fetchUsers()
